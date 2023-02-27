@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <input type="number" name="wysokosc" id="wysokosc" placeholder="Podaj wysokosc">
+        <input type="text" name="znak" id="znak" placeholder="Podaj znak">
+    </form>
+    <button>Wcisnij aby zrobic trojkat</button>
+    <div></div>
+    <script>
+        const wDiv = document.querySelector('div')
+        const wys = document.getElementById('wysokosc')
+        const znak = document.getElementById('znak')
+        const btn = document.querySelector('button')
+
+        btn.addEventListener('click', function(){
+            for(let j=0; j<=wys.value * 1; j++){
+                for(let i=0; i<=j; i++){
+                    wDiv.innerHTML += znak.value;
+                }
+                wDiv.innerHTML += '<br>';
+            }
+            console.log(wys.value)
+        })
+    </script>
+</body>
+</html>

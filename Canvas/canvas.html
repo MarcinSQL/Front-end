@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvasik</title>
+    <style>
+        body{
+            background-color: rgb(114, 100, 131);
+            height: 100vh;
+        }
+        canvas{
+            background-color: rgb(71, 71, 145);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid orangered;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <label>Kolorek bombek [po ang]:
+    <input type="text" name="kolor" id="k">
+    </label>
+    <button>Dodaj</button>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        const kolor = document.querySelector('input[name="kolor"]');
+        const btn = document.querySelector('button');
+
+        //animationitionitation
+        // let x = canvas.width/2;
+        // let y = canvas.height/2;
+        // const h = 60;
+        // const fps = 30;
+        // let lastTime = 0;
+
+        //TO JEST TAKIE NIEFAJNE TEGO NIE ROBIMY ALE MOZNA
+
+        // function animacja(){
+        //     ctx.clearRect(0,0,canvas.width,canvas.height);    //wyczyszca caly canvas
+        //     if(x-h/2 >= 600 || x-h/2 <= 0 ) x+= 5;
+        //     else x += -2;
+        //     if(y - h/2 >= 400 || y - h/2 <= 0) y=y*-1;
+        //     else y += 1;
+        //     ctx.fillRect(x - h/2, y - h/2, h, h)
+        // }
+        
+        // setInterval(animacja, 1000/ fps)
+
+        //To lepsze
+        // let x = canvas.width/2;
+        // let y = canvas.height/2;
+        // const h = 10;
+        // const fps = 144;
+        // let lastTime = 0;
+        // let speedX = 5;
+        // let speedY = 5;
+
+        // function ran(a){
+        //     if(a>=0) return (Math.floor(Math.random() * 5)+3)*-1;
+        //     else return Math.floor(Math.random() * 5)+3;
+        // }
+
+        // function animation(time){
+        //     requestAnimationFrame(animation);
+        //     if(time - lastTime >= 1000/fps){
+        //         lastTime = time;
+        //         ctx.clearRect(0,0, canvas.width, canvas.height); //czyszczenie canvasa
+        //         x += speedX;
+        //         y += speedY;
+        //         if(x<=0 + h + Math.PI || x >= canvas.width - h/2) speedX = ran(speedX);
+        //         if(y<=0 + h + Math.PI || y >= canvas.height - h/2) speedY = ran(speedY);
+        //         ctx.beginPath();
+        //         ctx.arc(x - h/2, y - h/2, 10, h, h * Math.PI);
+        //         ctx.fill();
+        //     }
+        // }
+        // animation();
+
+        ctx.fillStyle = "rgb(207, 207, 207)";
+
+        ctx.beginPath();
+        ctx.arc(300, 920, 600, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        ctx.fillStyle = "green";
+
+        ctx.beginPath();
+        ctx.moveTo(250,100);
+        ctx.lineTo(350, 100);
+        ctx.lineTo(300, 50);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(200,200);
+        ctx.lineTo(400, 200);
+        ctx.lineTo(300, 70);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(120, 300);
+        ctx.lineTo(480, 300);
+        ctx.lineTo(300, 130);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(120, 300);
+        ctx.lineTo(480, 300);
+        ctx.lineTo(300, 130);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "brown";
+
+        ctx.fillRect(280,300,50,60);
+
+        let x = canvas.width/2;
+        let y = canvas.height/2;
+        const h = 10;
+        const fps = 2;
+        let lastTime = 0;
+
+        const table = [];
+        table[0] = "lightgreen";
+        table[1] = "red";
+        table[2] = "blue";
+        table[3] = "orange";
+        table[4] = "pink";
+
+        var i = 4;
+
+        btn.addEventListener('click', (e)=>{
+            e.preventDefault();
+            i++;
+            table[i] = kolor.value;    
+            console.log(table);
+        })
+
+        
+
+        function kolorki(){
+            return table[Math.floor(Math.random() * i)];
+        }
+
+        function animation(time){
+            requestAnimationFrame(animation);
+            if(time - lastTime >= 1000/fps){
+                lastTime = time;
+                ctx.fillStyle = ctx.fillStyle = kolorki();
+                ctx.beginPath();
+                ctx.arc(280, 300, 10, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(260, 240, 10, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(360, 200, 10, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(300, 100, 10, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(400, 290, 10, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(200, 280, 10, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(270, 170, 10, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(330, 250, 10, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(320, 150, 10, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+        }
+        animation();
+
+        
+    </script>
+</body>
+</html>

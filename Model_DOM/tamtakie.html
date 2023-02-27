@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <input type="number" name="liczba1">
+        <input type="number" name="liczba2">
+    </form>
+    <button>Wcisnij</button>
+    <div class="wynik"></div>
+    <script>
+        const wDiv = document.querySelector('div.wynik')
+        const liczba1 = document.querySelector('input[name="liczba1"]');
+        const liczba2 = document.querySelector('input[name="liczba2"]');
+        const btn = document.querySelector('button')
+        
+
+        btn.addEventListener('click', function(){
+            const a = liczba1.value * 1;
+            const b = liczba2.value * 1;
+            
+            if(a < b){
+                wDiv.textContent = "Mniejsza: " + a + ", wieksza: " + b;
+            }
+            else if(a > b){
+                wDiv.textContent = "Mniejsza: " + b + ", wieksza: " + a;
+            }
+            else{
+                wDiv.textContent = "Liczby sa rowne sobie";
+            }
+        })
+    </script>
+</body>
+</html>

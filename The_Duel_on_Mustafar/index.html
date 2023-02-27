@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Duel on Mustafar</title>
+    <style>
+        body{
+            background-color: rgb(156, 156, 156);
+        }
+        li{
+            margin-bottom: 10px;
+        }
+        input[type=submit]{
+            margin-left: 200px;
+            width: 100px;
+            height: 50px;
+            background-color: rgb(0, 165, 0);
+            color: white;
+            border: none;
+        }
+        .tak{
+            background-color: green;
+        }
+        .flex{
+            display: flex;
+        }
+        .onaniewie{
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Duel on Mustafar</h1>
+    <div class="flex">
+    <form>
+        <ol>
+            <li>I have brought <br>
+                <label>
+                    <input type="radio" name="ihave" value="Peace">Peace    
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="ihave" value="Freedom">Freedom   
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="ihave" value="Justice">Justice  
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="ihave" value="and_security">and Security  
+                </label>
+            </li>
+            <li>To my new <br>
+                <label>
+                    <input type="radio" name="mynew">Empire
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="mynew">Kingdom
+                </label>
+            </li>
+            <li>Your new <br>
+                <label>
+                    <input type="text" name="empire">
+                </label>
+            </li>
+            <li>Don't make me <br>
+                <label>
+                    <input type="radio" name="makeme">Hug you
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="makeme">Love you
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="makeme">Kill you
+                </label>
+            </li>
+            <li>Anakin my allegiance is to <br>
+                <label>
+                    <input type="radio" name="isto">The republic
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="isto">to DEMOCRACY
+                </label>
+            </li>
+            <li>If you're not with me...you're my <br>
+                <label>
+                    <select name="yourme">
+                        <option value="null"></option>
+                        <option value="sandman">Sandman</option>
+                        <option value="padawan">Padawan</option>
+                        <option value="enemy">Enemy</option>
+                    </select>
+                </label>
+            </li>
+            <li>Only a Sith deals in <br>
+                <label>
+                    <input type="radio" name="dealsin">Absolutes
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="dealsin">Half's
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="dealsin">Bulk
+                </label>
+            </li>
+            <li>I will do what I <br>
+                <label>
+                    <select name="whati">
+                        <option value="null"></option>
+                        <option value="have">Have wanted to do since the damn podracing</option>
+                        <option value="must">Must</option>
+                        <option value="need">NEED TO DO</option>
+                    </select>
+                </label>
+            </li>
+            <li>You will <br>
+                <label>
+                    <input type="text" name="will">
+                </label>
+            </li>
+        </ol>
+        <input type="submit" name="send" value="Done">
+    </form>
+        <div class="onaniewie">
+            <img src="https://qph.cf2.quoracdn.net/main-qimg-50d063b9fe28da461cef402650503dcf-lq" alt="obi">
+        </div>
+    </div>
+    <script>
+        const sub = document.querySelector('input[name="send"]')
+        const ihave = document.querySelectorAll('input[name="ihave"]');
+        sub.addEventListener('click',(e)=>{
+            e.preventDefault();
+            ihave.forEach(ih => {
+                if(ih.value === "Peace" || ih.value === "Freedom" || ih.value === "Justice" || ih.value === "and_security"){
+                    ih.classList.add("tak")
+                    console.log('tak');
+                }
+            });
+        })
+    </script>
+</body>
+</html>

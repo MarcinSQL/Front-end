@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<title>Wyścigi samochodów</title>
+<meta charset="utf-8">
+<style>
+.grupa{
+    display: flex;
+}
+div {
+width: auto;
+height: 50px;
+position: relative;
+-webkit-animation: sam 10s infinite;
+animation: sam 10s infinite;
+}
+#div1 {-webkit-animation-timing-function: linear;}
+#div2 {-webkit-animation-timing-function: ease;}
+#div3 {-webkit-animation-timing-function: ease-in;}
+#div4 {-webkit-animation-timing-function: ease-out;}
+#div5 {-webkit-animation-timing-function: ease-in-out;}
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: ease-in-out;}
+#div1 {transform: translate(50px);}
+#div2 {transform: translate(250px);}
+#div3 {transform: translate(450px);}
+#div4 {transform: translate(650px);}
+#div5 {transform: translate(850px);}
+
+@-webkit-@keyframes sam {
+from {top: 0px;}
+to {top: 400px;}
+}
+@keyframes sam {
+from {top: 0px;}
+to {top: 400px;}
+}
+</style>
+</head>
+<body>
+<h3>Wyścigi samochodów</h3>
+<div class="grupa">
+    <div id="div1"><img src="sam1.png" alt="Pierwszy samochód"></div>
+    <div id="div2"><img src="sam2.png" alt="Drugi samochód"></div>
+    <div id="div3"><img src="sam3.png" alt="Trzeci samochód"></div>
+    <div id="div4"><img src="sam4.png" alt="Czwarty samochód"></div>
+    <div id="div5"><img src="sam6.png" alt="Piąty samochód"></div>
+</div>
+
+</body>
+</html>

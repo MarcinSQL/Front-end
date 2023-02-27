@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ripple Effect</title>
+</head>
+<body>
+    <a href="#">Click here</a>
+    <a href="#">Click here</a>
+
+    <script>
+        const links = document.querySelectorAll('a');
+
+        links.forEach(btn => btn.addEventListener('click', function(e){
+            // console.log(e.clientX + 'x');   //wspolrzedne x myszki
+            // console.log(e.clientY + 'y');   //wspolrzedne y myszki
+
+            // console.log(e.target.offsetLeft + 'left');  //odleglosc od lewej krawedzi do buttona
+            // console.log(e.target.offsetTop + 'top');    //odleglosc od gornej krawedzi do buttona
+
+            // console.log(e.target);  //target kliku
+
+            let x = e.clientX - e.target.offsetLeft;
+            let y = e.clientY - e.target.offsetTop;
+
+            const newSpan = document.createElement('span');
+
+            newSpan.style.left =  x + 'px';
+            newSpan.style.top = y + 'px';
+
+            this.appendChild(newSpan);
+        }))
+    </script>
+</body>
+</html>

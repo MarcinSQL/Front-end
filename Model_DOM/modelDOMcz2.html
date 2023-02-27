@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: black;
+            color: aquamarine;
+            font-weight: 200;
+            font-style: italic;
+        }
+        div{
+            background-color: red;
+            font-size: x-large;
+            color: lightblue;
+            font-style: initial;
+        }
+        .a{
+            background-color: wheat;
+            color: yellowgreen;
+            font-style: oblique;
+        }
+        .b{
+            background-color: khaki;
+            font-size: smaller;
+            color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <h1>Przykladowy naglowek</h1>
+    <div>Tak</div>
+    <p class="a">Akapit 1</p>
+    <p class="b">Akapit 2</p>
+    <script>
+        const nag = document.querySelector('h1');
+        const diveczek = document.querySelector('div').style.fontFamily = 'Tahoma';
+        const apa = document.querySelector('.a');
+        const bpb = document.querySelector('.b');
+
+        apa.innerHTML += ' Bardzo lubie sie uczyc!';
+        nag.innerHTML = 'JavaScript';
+        bpb.innerHTML += '<h2>Aplikacje internetowe</h2>';
+        nag.remove();
+    </script>
+</body>
+</html>

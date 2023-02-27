@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kaja Zaryczny">
+    <title>Flappy Bird</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2a253b;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <!-- Podpinamy nasze klasy i skrypt uruchamiajacy gre -->
+    <script src="Canvas.js"></script>
+    <script src="Table.js"></script>
+    <script src="Bird.js"></script>
+    <script src="Wall.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

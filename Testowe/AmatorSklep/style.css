@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body button,
+body div{
+    transition: all .3s ease-in-out;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 30px;
+}
+
+.header-title{
+    display: flex;
+    align-items: center;
+}
+
+.header-title span:first-child{
+    color: yellow;
+    margin-right: 5px;
+}
+
+.header-title span:last-child{
+    background-color: yellow;
+    color: black;
+    border-radius: 25%;
+    max-width: max-content;
+    margin-left: 10px;
+    font-size: 20px;
+    padding: 3px 10px;
+}
+
+.search-bar{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 80px;
+}
+.search-bar-input{
+    min-width: 400px;
+    font-size: 10px;
+    padding-left: 8px;
+    height: 100%;
+}
+
+.search-bar-icon{
+    background-color: yellow;
+    height: 100%;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 15%;
+    border-bottom-right-radius: 15%;
+}
+
+.header-basket{
+    display: flex;
+    align-items: end;
+    font-size: 20px;
+    font-weight: 500;
+    gap: 5px;
+}
+
+.categories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0px;
+    gap: 35px;
+}
+
+.categories-title{
+    font-size: 35px;
+    letter-spacing: 1px;
+}
+
+.categories-items{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0px 10px;
+    justify-content: center;
+}
+
+.categories-items button{
+    font-size: 20px;
+    padding: 10px 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.categories-items button:hover{
+    background: black;
+    color: yellow;
+}
+
+.categories-items button.active{
+    background: black;
+    color: yellow;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.product-item{
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.product-item:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.product-item img{
+    width: 260px;
+}
+
+.product-name{
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.product-description{
+    color: rgb(68, 68, 68);
+    font-size: 15px;
+    line-height: 23px;
+    width: 90%;
+}
+
+.product-price{
+    color: green;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-price .price-sale{
+    display: none;
+}
+
+.product-item.on-sale .price{
+    color: black;
+    font-size: 13px;
+    position: relative;
+    /* text-decoration: line-through; mozna ale takie nahhh */
+}
+
+.product-item.on-sale .price::before{
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 2px;
+    background-color: black;
+    top: 40%;
+    left: -7%;
+    transform: rotate(-10deg);
+}
+
+.product-item.on-sale .price-sale{
+    display: block;
+}
+
+.product-add-to-basket-btn{
+    background-color: black;
+    color: white;
+    width: 60%;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.product-add-to-basket-btn:hover{
+    color: yellow;
+}
+
+@media only screen and (min-width: 1300px){
+    .container{
+        display: flex;
+    }
+    .categories-items{
+        flex-direction: column;
+    }
+    .categories{
+        margin: 0px;
+        border-right: 2px solid rgb(214, 214, 214);
+        min-width: 350px;
+    }
+    .categories-items button{
+        padding: 10px 80px;
+        border-radius: 5px;
+    }
+    .categories-title{
+        background-color: yellow;
+        width: 100%;
+        text-align: center;
+        padding: 6px;
+    }
+    .products{
+        margin-left: 15px;
+        gap: 30px;
+    }
+}

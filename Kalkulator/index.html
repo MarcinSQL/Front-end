@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="author" content="Marcin Wasilewski">
+    <title>Kalkulator</title>
+</head>
+<body>
+    <nav>
+        <div class="nav">
+            <div class="rodzaj">
+                <p>Kalkulator</p>
+            </div>
+            <div class="style">
+                <p>Style</p>
+            </div>
+            <div class="autor">
+                <p>O autorze</p>
+            </div>  
+        </div>
+    </nav>
+    <section class="rozwijanie">
+        <label class="umieszczenie rodzaj_rozwiniecie">
+            <!-- tu mial byc wybor standardowy lub naukowy ale mi sie juz nie chcialo dorabiac
+                (nie placa mi za az tyle poswieconego czasu
+                piszac to 11.12.2022r. o godzinie 03:49)-->
+            <!-- Tu mial byc w ostatecznosci wybor czy pionowy czy poziomy kalkulator 
+                ale bez grida nie ma opcji przy takim czyms 
+                wiec odpuscilem sobie-->
+            <p>Prosty kalkulator bardzo fatalnie zoptymalizowany ale człowiek sie uczy całe życie. (czas pracy: jakieś 12h z przerwami)</p>
+        </label>
+        <label class="umieszczenie style_rozwiniecie">
+            <div class="domyslny">
+                <p>Domyślny</p>
+            </div>
+            <div class="zabawka">
+                <p>Zabawka</p>
+            </div>
+            <div class="cyfrowy">
+                <p>Cyfrowy</p>
+            </div>
+            <div class="woda">
+                <p>Efekt tafli wody</p>
+            </div>
+        </label>
+        <label class="umieszczenie autor_rozwiniecie">
+            <p>Marcin Wasilewski 4B</p>
+        </label>
+    </section>
+
+    <div class="wysrodkowanie">
+        <div class="border">
+            <div class="kalkulator obramowanie_kalkulatora">
+                <div class="wyswietlacz">
+                    <div class="pokazywanie">
+                        <label class="dopiski"></label>
+                        <label class="wynikowe"></label>
+                    </div>
+                </div>
+                <div class="klawiatura">
+                    <section class="grupowanie_znakow">
+                        <label class="pole_znaku" id="procent">
+                            <p class="procent">%</p>
+                        </label>
+                        <label class="pole_znaku" id="CE">
+                            <p class="CE">CE</p>
+                        </label>
+                        <label class="pole_znaku" id="C">
+                            <p class="C">C</p>
+                        </label>
+                        <label class="pole_znaku" id="cofanie">
+                            <p class="cofanie">⬅</p>
+                        </label>
+                    </section>
+                    <section class="grupowanie_znakow">
+                        <label class="pole_znaku" id="jeden_nad">
+                            <p class="1_nad">1/x</p>
+                        </label>
+                        <label class="pole_znaku" id="do_kwadratu">
+                            <p class="do_kwadratu">x²</p>
+                        </label>
+                        <label class="pole_znaku" id="pierwiastek">
+                            <p class="pierwiastek">√</p>
+                        </label>
+                        <label class="pole_znaku" id="dzielenie">
+                            <p class="dzielenie">/</p>
+                        </label>
+                    </section>
+                    <section class="grupowanie_znakow">
+                        <label class="pole" id="cyfra7">
+                            <p class="cyfra7">7</p>
+                        </label>
+                        <label class="pole" id="cyfra8">
+                            <p class="cyfra8">8</p>
+                        </label>
+                        <label class="pole" id="cyfra9">
+                            <p class="cyfra9">9</p>
+                        </label>
+                        <label class="pole_znaku" id="mnozenie">
+                            <p class="mnozenie">X</p>
+                        </label>
+                    </section>
+                    <section class="grupowanie_znakow">
+                        <label class="pole" id="cyfra4">
+                            <p class="cyfra4">4</p>
+                        </label>
+                        <label class="pole" id="cyfra5">
+                            <p class="cyfra5">5</p>
+                        </label>
+                        <label class="pole" id="cyfra6">
+                            <p class="cyfra6">6</p>
+                        </label>
+                        <label class="pole_znaku" id="odejmowanie">
+                            <p class="odejmowanie">-</p>
+                        </label>
+                    </section>    
+                    <section class="grupowanie_znakow">
+                        <label class="pole" id="cyfra1">
+                            <p class="cyfra1">1</p>
+                        </label>
+                        <label class="pole" id="cyfra2">
+                            <p class="cyfra2">2</p>
+                        </label>
+                        <label class="pole" id="cyfra3">
+                            <p class="cyfra3">3</p>
+                        </label>
+                        <label class="pole_znaku" id="dodawanie">
+                            <p class="dodawanie">+</p>
+                        </label>
+                    </section>
+                    <section class="grupowanie_znakow">
+                        <label class="pole" id="negate">
+                            <p class="negate">+/-</p>
+                        </label>
+                        <label class="pole" id="cyfra0">
+                            <p class="cyfra0">0</p>
+                        </label>
+                        <label class="pole" id="przecinek">
+                            <p class="przecinek">.</p>
+                        </label>
+                        <label class="pole_wyniku" id="wynik">
+                            <p class="wynik">=</p>
+                        </label>
+                    </section>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <p class="mobilniak">
+        Weź użyj sobie systemowego kalkulatora a nie będziesz na telefonie kombinować i ze strony specjalnie korzystać.
+    </p>
+    <script src="main.js"></script>
+</body>
+</html>
