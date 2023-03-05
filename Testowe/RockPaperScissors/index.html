@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ROCK | PAPER | SCISSORS</title>
+</head>
+<body>
+    <h1>ROCK | PAPER | SCISSORS</h1>
+    <div class="scores">
+        <p class="player">PLAYER</p>
+        <span class="player-points"></span>
+        <span class="comp-points"></span> 
+        <p class="comp">COMP</p>
+    </div>
+    <section class="options">
+        <button data-option="ROCK"><img src="./img/rock.JPG" alt="rock"></button>
+        <button data-option="PAPER"><img src="./img/paper.JPG" alt="paper"></button>
+        <button data-option="SCISSORS"><img src="./img/scissors.JPG" alt="scissors"></button>
+    </section>
+    <div class="choices">
+        <p class="player">Player choice: <span class="player-choice">rock</span></p>
+        <p class="comp">Comp choice: <span class="comp-choice">rock</span></p>
+    </div>
+    <p class="result-text"></p>
+    <button class="reset-game">Reset Game</button>
+    <script src="main.js"></script>
+</body>
+</html>
